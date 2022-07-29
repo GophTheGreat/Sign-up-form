@@ -1,7 +1,16 @@
+@font-face {
+  font-family: "Norse";
+  src: url(Norse-Bold.otf);
+}
+
+body{
+  display: flex;
+}
+
 .body{
   font-family: 'Roboto', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100vh;
   min-width: 100vw;
 }
@@ -11,8 +20,39 @@
   flex-direction: row;
 }
 
-label,input{
+.leftpane{
+  width: 600px;
+  height: 100%;
+}
+
+#photo
+{
+  width: inherit;
+}
+
+.logobox{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: inherit;
+  position: absolute;
+  top: 140px;
+  background-color: #09090aa4;
+}
+
+#logotext{
+  font-family: Norse;
+  font-size: 200px;
+  color: rgb(29, 249, 189);
+  display: flex;
+}
+#logo{
+  height: 80%;
+}
+
+label,input{
   flex-direction: column;
 }
 
