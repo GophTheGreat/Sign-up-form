@@ -15,11 +15,6 @@ body{
   min-width: 100vw;
 }
 
-.row{
-  display: flex;
-  flex-direction: row;
-}
-
 .leftpane{
   width: 600px;
   height: 100%;
@@ -47,13 +42,70 @@ body{
   font-size: 200px;
   color: rgb(29, 249, 189);
   display: flex;
+  padding-left: 10px;
 }
 #logo{
   height: 80%;
 }
 
-label,input{
+.rightpane{
+  margin-left: 80px;
+  margin-right: 420px;
+}
+
+.rightheader{
+  margin-top: 100px;
+}
+
+.fielsdtop{
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(50, 50, 50);
+  padding-top: 70px;
+}
+
+p{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.fields{
+  padding-top: 30px;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.field{
+  display: flex;
   flex-direction: column;
+  padding-right: 50px;
+}
+
+label{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+}
+
+input{
+  border-radius: 5px;
+  border-color: #E5E7EB;
+  border-width: 1px;
+  font-size: 16px;
+  height: 25px;
+  width: 25em;
+}
+
+input:focus{
+  outline: none;
+  border-width: 2px;
+  border-color: #3f78e9;
 }
 
 .footer{
