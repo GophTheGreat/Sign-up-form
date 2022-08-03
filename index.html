@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +13,13 @@
     function matchPassword(){
       let pw1 = document.getElementById("password");
       let pw2 = document.getElementById("passwordConfirm");
-      if(pw1 != pw2){
-        alert("Passwords did not match");
+      if(pw1.value === pw2.value){
+        pw1.setCustomValidity('');
+      }
+      else{
+        pw1.setCustomValidity('Passwords do not match');
+        pw1.classList.add('error');
+        pw2.classList.add('error');
       }
     }
   </script>
@@ -36,48 +42,50 @@
         <div class="rightmiddle">
           <div class="fielsdtop">Let's do this!</div>
           <div class="fields">
-            <div class="row">
-              <div class="field">
-                <label for="firstName">FIRST NAME</label>
-                <input id="firstName">
-              </div>
-              <div class="field">
-                <label for="lastName">LAST NAME</label>
-                <input id="lastName"> 
-              </div>
-            </div>
+            <form id="form1" action="#">
 
-            <div class="row">
-              <div class="field">
-                <label for="email">EMAIL</label>
-                <input type="email" id="email" name="email">
+              <div class="row">
+                <div class="field">
+                  <label for="firstName">FIRST NAME</label>
+                  <input type="text" name="firstName" id="firstName" required>
+                </div>
+                <div class="field">
+                  <label for="lastName">LAST NAME</label>
+                  <input type="text" name="lastName" id="lastName" required>
+                </div>
               </div>
-              <div class="field">
-                <label for="phone">PHONE</label>
-                <input type="phone" id="phone" name="phone">
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="field">
-                <label for="password">PASSWORD</label>
-                <input type="password" id="password" name="password" minlength="8" required>
+              <div class="row">
+                <div class="field">
+                  <label for="email">EMAIL</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="field">
+                  <label for="phone">PHONE</label>
+                  <input type="phone" id="phone" name="phone" required>
+                </div>
               </div>
-              <div class="field">
-                <label for="passwordConfirm">CONFIRM PASSWORD</label>
-                <input type="password" id="passwordConfirm" name="passwordConfirm" minlength="8" required>
+
+              <div class="row">
+                <div class="field">
+                  <label for="password">PASSWORD</label>
+                  <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                </div>
+                <div class="field">
+                  <label for="passwordConfirm">CONFIRM PASSWORD</label>
+                  <input type="password" id="passwordConfirm" name="passwordConfirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                </div>
               </div>
-           </div> 
-          </div>
-          <div class="rightfooter">
-            <button> Create Account </button>
-            <div id="footertext"> Already have an account? Log in </div>
+            </form>
           </div>
         </div>
-      <div class="footer">
-        <div>Copyright © The Odin Project 2021</div>
+        <div class="rightfooter">
+          <button type="submit" form="form1" value="Submit" onclick="matchPassword() "> Create Account </button>
+          <div id="footertext"> 
+            <div>Already have an account? </div>
+            <div id="login"> Log in</div>
+        </div>
       </div>
-    </div>
 
 
     
